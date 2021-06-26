@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Donate = () => {
+const Donate = (props) => {
   return (
     <div>
-      Donate
+      {/* Donate */}
+      Email: {props.payload.identifier}
+      {console.log(props)}
     </div>
   )
 }
