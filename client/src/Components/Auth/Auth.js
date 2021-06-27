@@ -1,8 +1,6 @@
 import {React, useEffect, useState} from 'react'
 import Sawo from "sawo"
 import Donate from '../Donate/Donate'
-import dotenv from 'dotenv';
-dotenv.config();
 
 const Auth = () => {
   const [payload, setPayload] = useState(false);
@@ -20,17 +18,17 @@ const Auth = () => {
     sawo.showForm();
   }, []);
   
-  return (
-    <div>
-      <div id="sawo-container" style={{height: "300px", width: "300px"}}>
+    return (
+      <div>
+        <div id="sawo-container" style={{height: "300px", width: "300px"}}>
+        </div>
+        {payload && (
+          <>
+            <Donate payload={payload} />
+          </>
+          )}
       </div>
-      {payload && (
-        <>
-          <Donate payload={payload} />
-        </>
-        )}
-    </div>
-  )
+    )
 }
 
 export default Auth
